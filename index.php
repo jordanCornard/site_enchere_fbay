@@ -3,17 +3,23 @@
 
     <body>
            <?php
+		   
+	// variable de sessions
     session_start();
+	
+	//appelle de pages
     include "global/config.php";
     include "vues/vueHeader.php";
     
-    
+    //test du $_Request
     if (!isset($_REQUEST['useCase']))
     {     
         $_REQUEST['useCase'] = 'gererConnexion'; 
     }
     
     $useCase = $_REQUEST['useCase'];
+	
+	//choix
     switch ($useCase){
         case 'gererConnexion':{
             include "controleurs/controleurConnexion.php";
